@@ -87,6 +87,11 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
+
+      res.render('single-post', {
+        post,
+        loggedIn: req.session.loggedIn
+      });
   });
 
 module.exports = router;
