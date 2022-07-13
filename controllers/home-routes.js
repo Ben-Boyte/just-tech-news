@@ -35,6 +35,11 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
+
+      res.render('homepage', {
+        posts,
+        loggedIn: req.session.loggedIn
+      });
   });
 
   router.get('/login', (req, res) => {
